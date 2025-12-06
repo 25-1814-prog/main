@@ -1,0 +1,964 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<meta name="format-detection" content="telephone=no" />
+	<link rel="apple-touch-icon" sizes="180x180" href="https://v04.krds.go.kr/resources/
+img/guide/favicon_180.png">
+	<link rel="icon" type="image/png" sizes="512x512" href="https://v04.krds.go.kr/resources/
+img/guide/favicon_512.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="https://v04.krds.go.kr/resources/
+img/guide/favicon_192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="https://v04.krds.go.kr/resources/
+img/guide/favicon_32.png">
+	<title>통합 민원/예약 신청</title>
+	<link href="https://v04.krds.go.kr/resources/
+css/pattern_css.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+	<div id="wrap">
+		<div id="skip-nav" class="type1">
+			<a href="#container">본문 바로가기</a>
+		</div>
+		<div id="header-top">
+			<div class="toggle-wrap">
+				<div class="toggle-head">
+					<div class="inner">
+						<span class="nuri-txt">이 누리집은 대한민국 공식 전자정부 누리집입니다.</span>
+						</div>
+				</div>
+				<div class="toggle-body">
+					<div class="inner">
+						<dl class="dl nuri">
+							<dt class="dt">공식 누리집 주소 확인하기</dt>
+							<dd class="dd">go.kr 주소를 사용하는 누리집은 대한민국 정부기관이 관리하는 누리집입니다.<br class="br">이밖에 or.kr 또는 .kr등 다른 도메인 주소를
+								사용하고
+								있다면 아래 URL에서
+								도메인 주소를 확인해
+								보세요</dd>
+							<dd><a href="#" class="btn btn-txt ico-go xsm" target="_blank">운영중인 공식 누리집보기</a></dd>
+						</dl>
+					</div>
+				</div>
+			</div>
+		</div>
+		<header id="header">
+			<div class="header-in">
+				<div class="head-body">
+					<div class="inner">
+						<div class="head-etc">
+							<ul class="etc-ul">
+								<li class="li"><a href="#" class="btn btn-txt ico-go xsm" target="_blank">어린이 정부포털</a></li>
+								<li class="li">
+									<div class="krds-drop-wrap">
+										<button type="button" class="btn btn-txt ico-arr-down xsm drop-btn">지원</button>
+										<div class="drop-menu">
+											<div class="drop-in">
+												<ul class="drop-list">
+													<li><a href="#" class="item-link">인증센터</a></li>
+													<li><a href="#" class="item-link">누리집안내지도</a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</li>
+								<li class="li">
+									<div class="krds-drop-wrap zoom-drop">
+										<button type="button" class="btn btn-txt ico-arr-down xsm drop-btn">화면크기</button>
+										<div class="drop-menu">
+											<div class="drop-in">
+												<ul class="drop-list">
+													<li><a href="#" class="item-link xsm">작게</a></li>
+													<li><a href="#" class="item-link sm active">보통</a></li>
+													<li><a href="#" class="item-link md">조금 크게</a></li>
+													<li><a href="#" class="item-link lg">크게</a></li>
+													<li><a href="#" class="item-link xlg">가장크게</a></li>
+												</ul>
+												<div class="drop-btm-btn">
+													<button type="button" class="btn sm btn-txt ico-reset ico-before">초기화</button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
+								<li class="li">
+									<div class="krds-drop-wrap">
+										<button type="button" class="btn btn-txt ico-arr-down xsm drop-btn">Language</button>
+										<div class="drop-menu">
+											<div class="drop-in">
+												<ul class="drop-list">
+													<li><a href="#" class="item-link ico-go" target="_blank">한국어</a></li>
+													<li><a href="#" class="item-link ico-go" target="_blank">English</a></li>
+													<li><a href="#" class="item-link ico-go" target="_blank">中文</a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<div class="head-in">
+							<h1 class="logo">
+								<a href="worksheet.html">
+									<img src="https://v04.krds.go.kr/resources/
+img/pattern/layout/head_logo.svg" class="logo-im" alt="대한민국정부">
+									<img src="https://v04.krds.go.kr/resources/
+img/pattern/layout/head_logo_slogan.svg" class="logo-slogan"
+									     alt="다시 대한민국! 새로운 국민의 나라">
+								</a>
+							</h1>
+							
+							<div class="right ">
+								<button type="button" class="btn-navi navi-row sch" title="통합검색 레이어"
+								        onclick="common.popupEvent('#popTotalSch');">통합검색</button>
+								<a href="#" class="btn-navi navi-row login">로그인</a>
+								<button type="button" class="btn-navi navi-row join">회원가입</button>
+								<div class="krds-drop-wrap my-drop">
+									<button type="button" class="btn-navi navi-row my drop-btn">나의 GOV</button>
+									<div class="drop-menu">
+										<div class="drop-in">
+											<div class="drop-top-info">
+												<p class="my-name">홍길동님</p>
+												<dl class="my-time">
+													<dt>로그아웃까지 남은 시간</dt>
+													<dd>
+														<span class="time">12:00</span>
+														<button type="button" class="btn sm btn-txt">시간 연장</button>
+													</dd>
+												</dl>
+											</div>
+											<ul class="drop-list">
+												<li><a href="#" class="item-link">나의 GOV 홈</a></li>
+												<li><a href="#" class="item-link">나의 신청내역</a></li>
+												<li><a href="#" class="item-link">나의 생활정보</a></li>
+												<li><a href="#" class="item-link">나의 정보관리</a></li>
+											</ul>
+											<div class="drop-btm-btn">
+												<button type="button" class="btn sm btn-txt ico-log ico-before">로그아웃</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<button type="button" class="btn-navi navi-row all" aria-controls="mobile-nav">전체메뉴</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<nav class="krds-gnb">
+					<div class="inner">
+						<ul class="gnb-menu">
+							
+							<li>
+								<button type="button" class="gnb-main-trigger" data-trigger="gnb">민원</button>
+								<div class="gnb-toggle-wrap">
+									<div class="gnb-main-list" data-has-submenu="true">
+										<ul>
+											<li>
+												<button type="button" class="gnb-sub-trigger" data-trigger="gnb">2Depth</button>
+												<div class="gnb-sub-list">
+													<div class="gnb-sub-content">
+														<h2 class="sub-title"><span>2Depth title</span></h2>                  
+														<ul>
+															<li><button type="button">Last depth</button></li>
+															<li><a href="#">Last depth</a></li>
+														</ul>
+													</div>
+													<div class="gnb-sub-banner">
+														<span class="krds-badge bg1">신규 서비스</span>
+														<button type="button" class="krds-btn large text">메뉴명 <i class="svg-icon ico-angle right"></i></button>
+													</div>
+												</div>
+												</li>
+											<li>
+												<button type="button" class="gnb-sub-trigger" data-trigger="gnb">2Depth</button>
+												<div class="gnb-sub-list between">
+													<div class="gnb-sub-content">
+														<h2 class="sub-title">
+															<a href="#">2Depth title <i class="svg-icon ico-page-next"></i></a>
+														</h2>   
+														<ul>
+															<li><button type="button">Last depth</button></li>
+															<li><a href="#">Last depth</a></li>
+														</ul>
+													</div>
+													<div class="gnb-sub-banner">
+														<span class="krds-badge bg1">신규 서비스</span>
+														<button type="button" class="krds-btn large text">메뉴명 <i class="svg-icon ico-angle right"></i></button>
+													</div>
+												</div>
+												</li>
+											<li>
+												<a href="#" class="gnb-sub-trigger" data-trigger="gnb" target="_blank" title="새 창 열림">
+													외부사이트 링크(anchor)
+													<i class="svg-icon ico-go"></i>
+												</a>
+											</li>
+											<li>
+												<button type="button" class="gnb-sub-trigger" data-trigger="gnb" title="새 창 열림">
+													외부사이트 링크(button)
+													<i class="svg-icon ico-go"></i>
+												</button>
+											</li>
+											<li>
+												<div class="gnb-sub-banner">
+													<span class="krds-badge bg1">신규 서비스</span>
+													<button type="button" class="krds-btn large text" data-trigger="gnb">메뉴명 <i class="svg-icon ico-angle right"></i></button>
+												</div>
+											</li>
+										</ul>
+									</div>
+									</div>
+								</li>
+				
+							<li>
+								<button type="button" class="gnb-main-trigger" data-trigger="gnb">국민참여</button>
+								<div class="gnb-toggle-wrap">
+									<div class="gnb-main-list" data-has-submenu="true">
+										<ul>
+											<li>
+												<button type="button" class="gnb-sub-trigger" data-trigger="gnb">2Depth</button>
+												<div class="gnb-sub-list">
+													<div class="gnb-sub-content">
+														<h2 class="sub-title"><span>2Depth title</span></h2>
+														<ul class="type-description">
+															<li>
+																<h3 class="tit">
+																	<a href="#" target="_blank" title="새 창 열림">3Depth title <i class="svg-icon ico-go"></i></a>
+																</h3>
+																<p class="txt">메뉴명과 메뉴에 관한 간략한 설명이 표시되는 스타일입니다.</p>
+															</li>
+														</ul>
+													</div>
+													<div class="gnb-sub-banner">
+														<span class="krds-badge bg1">신규 서비스</span>
+														<button type="button" class="krds-btn large text">메뉴명 <i class="svg-icon ico-angle right"></i></button>
+													</div>
+												</div>
+												</li>
+											<li>
+												<button type="button" class="gnb-sub-trigger" data-trigger="gnb">2Depth</button>
+												<div class="gnb-sub-list between">
+													<div class="gnb-sub-content">
+														<h2 class="sub-title"><span>2Depth title</span></h2>
+														<ul class="type-description">
+															<li>
+																<h3 class="tit">
+																	<a href="#" target="_blank" title="새 창 열림">3Depth title <i class="svg-icon ico-go"></i></a>
+																</h3>
+																<p class="txt">메뉴명과 메뉴에 관한 간략한 설명이 표시되는 스타일입니다.</p>
+															</li>
+														</ul>
+													</div>
+													<div class="gnb-sub-banner">
+														<span class="krds-badge bg1">신규 서비스</span>
+														<button type="button" class="krds-btn large text">메뉴명 <i class="svg-icon ico-angle right"></i></button>
+													</div>
+												</div>
+												</li>
+										</ul>
+									</div>
+									</div>
+								</li>
+				
+							<li>
+								<button type="button" class="gnb-main-trigger" data-trigger="gnb">뉴스&middot;소식</button>
+								<div class="gnb-toggle-wrap">
+									<div class="gnb-main-list">
+										<div class="gnb-sub-list single-list between">
+											<div class="gnb-sub-content">
+												<h2 class="sub-title"><span>2Depth title</span></h2>
+												<ul>
+													<li><a href="#">Last depth</a></li>
+												</ul>
+											</div>
+											<div class="gnb-sub-banner">
+												<span class="krds-badge bg1">신규 서비스</span>
+												<button type="button" class="krds-btn large text">메뉴명 <i class="svg-icon ico-angle right"></i></button>
+											</div>
+										</div>
+										</div>
+									</div>
+								</li>
+				
+							<li>
+								<button type="button" class="gnb-main-trigger" data-trigger="gnb">정보공개</button>
+								<div class="gnb-toggle-wrap">
+									<div class="gnb-main-list" data-has-submenu="true">
+										<ul>
+											<li>
+												<button type="button" class="gnb-sub-trigger" data-trigger="gnb">2Depth</button>
+												<div class="gnb-sub-list">
+													<div class="gnb-sub-content">
+														<h2 class="sub-title"><span>2Depth title</span></h2>
+														<ul class="type-description">
+															<li>
+																<h3 class="tit">
+																	<a href="#" target="_blank" title="새 창 열림">3Depth title <i class="svg-icon ico-go"></i></a>
+																</h3>
+																<p class="txt">메뉴명과 메뉴에 관한 간략한 설명이 표시되는 스타일입니다.</p>
+															</li>
+														</ul>
+													</div>
+												</div>
+												</li>
+											<li>
+												<button type="button" class="gnb-sub-trigger" data-trigger="gnb">2Depth</button>
+												<div class="gnb-sub-list between">
+													<div class="gnb-sub-content">
+														<h2 class="sub-title"><span>2Depth title</span></h2>
+														<ul>
+															<li><a href="#">Last depth</a></li>
+														</ul>
+													</div>
+												</div>
+												</li>
+										</ul>
+									</div>
+									</div>
+								</li>
+				
+							<li>
+								<button type="button" class="gnb-main-trigger" data-trigger="gnb">정책자료</button>
+								<div class="gnb-toggle-wrap">
+									<div class="gnb-main-list" data-has-submenu="true">
+										<ul>
+											<li>
+												<button type="button" class="gnb-sub-trigger" data-trigger="gnb">2Depth</button>
+												<div class="gnb-sub-list">
+													<div class="gnb-sub-content">
+														<h2 class="sub-title"><span>2Depth title</span></h2>
+														<ul>
+															<li><a href="#">Last depth</a></li>
+														</ul>
+													</div>
+													<div class="gnb-sub-banner">
+														<span class="krds-badge bg1">신규 서비스</span>
+														<button type="button" class="krds-btn large text">메뉴명 <i class="svg-icon ico-angle right"></i></button>
+													</div>
+												</div>
+												</li>
+										</ul>
+									</div>
+									</div>
+								</li>
+				
+							<li>
+								<a href="#" class="gnb-main-trigger is-link" data-trigger="gnb">링크(anchor)</a>
+							</li>
+							<li>
+								<button type="button" class="gnb-main-trigger is-link" data-trigger="gnb">링크(button)</button>
+							</li>
+						</ul>
+					</div>
+				</nav>
+				</div>
+			<nav id="mobile-nav" class="krds-gnb-mobile">
+				<div class="gnb-wrap type-header-tab">
+					<div class="gnb-header">
+						<div class="gnb-utils">
+							<ul class="etc-ul">
+								<li><button type="button" class="krds-btn xsmall text">화면크기</button></li>
+								<li><button type="button" class="krds-btn xsmall text">Language</button></li>
+							</ul>
+							<button type="button" class="krds-btn medium icon" id="close-nav">
+								<span class="sr-only">전체메뉴 닫기</span>
+								<i class="svg-icon ico-popup-close"></i>
+							</button>
+						</div>
+						<div class="gnb-login">
+							<button type="button" class="krds-btn medium text"><i class="svg-icon ico-log"></i> 로그인을 해주세요.</button>
+						</div>
+						<div class="gnb-tab-nav">
+							<div class="sch-input">
+								<input type="text" class="form-control" placeholder="찾고자 하는 메뉴명을 입력해 주세요" title="찾고자 하는 메뉴명 입력">
+								<button type="button" class="krds-btn medium icon ico-search">
+									<span class="sr-only">검색</span>
+									<i class="svg-icon ico-sch"></i>
+								</button>
+							</div>
+							<div class="menu-wrap">
+								<ul>
+									<li>
+										<a href="#mGnb-anchor1" class="gnb-main-trigger"><h2>MyGOV</h2></a>
+									</li>
+									<li>
+										<a href="#mGnb-anchor2" class="gnb-main-trigger"><h2>민원서비스</h2></a>
+									</li>
+									<li>
+										<a href="#mGnb-anchor3" class="gnb-main-trigger"><h2>보조금24</h2></a>
+									</li>
+									<li>
+										<a href="#mGnb-anchor4" class="gnb-main-trigger"><h2>정책정보</h2></a>
+									</li>
+									<li>
+										<a href="#mGnb-anchor5" class="gnb-main-trigger"><h2>고객센터</h2></a>
+									</li>
+									<li><a href="#" class="gnb-main-trigger">단순링크</a></li>
+								</ul>
+							</div>
+						</div>
+						</div>
+					<div class="gnb-body">
+						<div class="gnb-menu">
+							<div class="submenu-wrap">
+								<div class="gnb-sub-list" id="mGnb-anchor1">
+									<h3 class="sub-title">MyGOV</h3>
+									<ul>										
+										<li><a href="#" class="gnb-sub-trigger">MyGOV 홈</a></li>
+										<li><a href="#" class="gnb-sub-trigger">나의 신청내역</a></li>
+										<li><a href="#" class="gnb-sub-trigger">나의 생활정보</a></li>
+										<li><a href="#" class="gnb-sub-trigger">나의 정보관리</a></li>
+									</ul>
+								</div>
+								<div class="gnb-sub-list" id="mGnb-anchor2">
+									<ul>
+										<h3 class="sub-title">민원서비스</h3>
+										<li><a href="#" class="gnb-sub-trigger">민원 신청&middot;안내</a></li>
+										<li><a href="#" class="gnb-sub-trigger">사실/진위 확인</a></li>
+										<li><a href="#" class="gnb-sub-trigger">원스톱 서비스</a></li>
+										<li><a href="#" class="gnb-sub-trigger">분야별 서비스</a></li>
+										<li><a href="#" class="gnb-sub-trigger">기업/단체 서비스</a></li>
+										<li><a href="#" class="gnb-sub-trigger">돌봄시설 등 위치 찾기</a></li>
+									</ul>
+									<div class="gnb-sub-banner">
+										<span class="krds-badge bg1">신규 서비스</span>
+										<button type="button" class="krds-btn small text">메뉴명 <i class="svg-icon ico-angle right"></i></button>
+									</div>
+								</div>
+								<div class="gnb-sub-list" id="mGnb-anchor3">
+									<h3 class="sub-title">보조금24</h3>
+									<ul>										
+										<li><a href="#" class="gnb-sub-trigger">보조금24 홈</a></li>
+										<li><a href="#" class="gnb-sub-trigger">나의 혜택</a></li>
+										<li><a href="#" class="gnb-sub-trigger">간편 찾기</a></li>
+										<li><a href="#" class="gnb-sub-trigger">전체 혜택</a></li>
+										<li>
+											<a href="#" class="gnb-sub-trigger">보조금24란</a>
+											<ul class="sub-ul">
+												<li>
+													<a href="#" class="subm is-depth4">소개(4depth)</a>
+													<div class="depth4-wrap">
+														<div class="depth4-head">
+															<button type="button" class="krds-btn medium icon trigger-prev">
+																<span class="sr-only">이전화면</span>
+																<i class="svg-icon ico-angle left"></i>
+															</button>
+															<button type="button" class="krds-btn medium icon trigger-close">
+																<span class="sr-only">전체메뉴 닫기</span>
+																<i class="svg-icon ico-popup-close"></i>
+															</button>
+														</div>
+														<ul class="depth4-body">
+															<li>
+																<h4 class="sub-title">4depth title</h4>
+																<ul class="depth4-ul">
+																	<li><a href="#">depth title</a></li>
+																	<li><a href="#">depth title</a></li>
+																	<li><a href="#">depth title</a></li>
+																	<li><a href="#">depth title</a></li>
+																</ul>
+															</li>
+														</ul>
+													</div>
+												</li>
+												<li><a href="#" class="subm">이용안내</a></li>
+												<li><a href="#" class="subm">자주묻는 질문</a></li>
+											</ul>
+										</li>
+									</ul>
+								</div>
+								<div class="gnb-sub-list" id="mGnb-anchor4">
+									<h3 class="sub-title">정책정보</h3>
+									<ul>
+										<li><a href="#" class="gnb-sub-trigger">분야별 정책정보</a></li>
+										<li><a href="#" class="gnb-sub-trigger">정부/지자체 조직도</a></li>
+										<li><a href="#" class="gnb-sub-trigger">정부/지자체 누리집</a></li>
+										<li><a href="#" class="gnb-sub-trigger">지자체 소식</a></li>
+										<li><a href="#" class="gnb-sub-trigger">공모전</a></li>
+										<li><a href="#" class="gnb-sub-trigger">공공자원공유</a></li>
+										<li><a href="#" class="gnb-sub-trigger">국고보조금 부정수급 신고</a></li>
+									</ul>
+								</div>
+								<div class="gnb-sub-list" id="mGnb-anchor5">
+									<h3 class="sub-title">고객센터</h3>
+									<ul>
+										<li><a href="#" class="gnb-sub-trigger">공지사항</a></li>
+										<li><a href="#" class="gnb-sub-trigger">이용안내</a></li>
+										<li><a href="#" class="gnb-sub-trigger">자주 묻는 질문(FAQ)</a></li>
+										<li><a href="#" class="gnb-sub-trigger">자료실</a></li>
+										<li><a href="#" class="gnb-sub-trigger">상담 예약</a></li>
+										<li><a href="#" class="gnb-sub-trigger">개선 의견</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="gnb-bottom">
+							<a href="#" class="krds-btn medium text">인증 센터</a>
+							<a href="#" class="krds-btn medium text" target="_blank" title="새 창 열기"> 어린이 정부포털 <i class="svg-icon ico-go"></i> </a>
+						</div>
+						</div>
+					</div>
+			</nav>
+			<div class="popup-wrap" data-type="full" id="popTotalSch">
+				<div class="popup-in">
+					<div class="popup">
+						<div class="popup-head sr-only">
+							<h1 class="pop-tit">통합검색</h1>
+						</div>
+						<div class="popup-body">
+							<div class="pop-total-serch-wrap">
+								<div class="search-total-top">
+									<div class="search-tit">
+										<label for="search-total-input-id">검색어를 입력해주세요</label>
+										<a href="#" class="btn btn-txt ico-arr sm">검색에 어려움이 있으신가요?</a>
+									</div>
+									<div class="sch-form-wrap vert">
+										<div class="sch-input">
+											<input type="text" class="form-control xlg" id="search-total-input-id"
+											       placeholder="검색어 입력" value="퇴직">
+											<button type="button" class="btn btn-ico ico-sch">
+												<span class="sr-only">검색</span>
+											</button>
+										</div>
+										<button type="button" class="btn btn-txt ico-sch1 sm ico-before">고급검색</button>
+									</div>
+									</div>
+								<div class="search-text">
+									<ul class="sch-keyword-list" aria-live="polite">
+										<li class="li">
+											<div class="text">
+												<p class="txt"><span class="text-bold">나의 퇴직</span>금 계산해 보기</p>
+												<p class="url">https://labor.moel.go.kr/cmmt/calRtrmnt.do</p>
+											</div>
+											<a href="#" class="btn btn-txt ico-go sm" target="_blank"><span>바로가기</span></a>
+										</li>
+										<li class="li">
+											<div class="text">
+												<p class="txt"><span class="text-bold">퇴직</span>금 계산기</p>
+											</div>
+										</li>
+										<li class="li">
+											<div class="text">
+												<p class="txt"><span class="text-bold">퇴직</span>금 중간정산</p>
+											</div>
+										</li>
+										<li class="li">
+											<div class="text">
+												<p class="txt"><span class="text-bold">퇴직</span>금 미지급</p>
+											</div>
+										</li>
+										<li class="li">
+											<div class="text">
+												<p class="txt">일용직<span class="text-bold">퇴직</span>금</p>
+											</div>
+										</li>
+										<li class="li">
+											<div class="text">
+												<p class="txt">육아휴직<span class="text-bold">퇴직</span>금</p>
+											</div>
+										</li>
+										<li class="li">
+											<div class="text">
+												<p class="txt">연차수당<span class="text-bold">퇴직</span>금</p>
+											</div>
+										</li>
+									</ul>
+									</div>
+								</div>
+							</div>
+						<button type="button" class="popup-close"><span class="sr-only">레이어 닫기</span></button>
+					</div>
+				</div>
+			</div>
+			<div class="popup-wrap" data-type="full" id="popFootLink">
+				<div class="popup-in">
+					<div class="popup">
+						<div class="popup-head">
+							<h1 class="pop-tit">소속기관(지청 및 위원회)</h1>
+						</div>
+						<div class="popup-body">
+							<ul class="pop-foot-links">
+								<li><a href="#" target="_blank">서울지방고용노동청</a></li>
+								<li><a href="#" target="_blank">서울강남지청</a></li>
+								<li><a href="#" target="_blank">서울동부지청</a></li>
+								<li><a href="#" target="_blank">서울서부지청</a></li>
+								<li><a href="#" target="_blank">서울남부지청</a></li>
+								<li><a href="#" target="_blank">서울북부지청</a></li>
+								<li><a href="#" target="_blank">서울관악지청</a></li>
+								<li><a href="#" target="_blank">중부지방고용노동청</a></li>
+								<li><a href="#" target="_blank">인천북부지청</a></li>
+								<li><a href="#" target="_blank">부천지청</a></li>
+								<li><a href="#" target="_blank">의정부지청</a></li>
+								<li><a href="#" target="_blank">고양지청</a></li>
+								<li><a href="#" target="_blank">경기지청</a></li>
+								<li><a href="#" target="_blank">성남지청</a></li>
+								<li><a href="#" target="_blank">안양지청</a></li>
+								<li><a href="#" target="_blank">안산지청</a></li>
+								<li><a href="#" target="_blank">평택지청</a></li>
+								<li><a href="#" target="_blank">강원지청･강릉지청</a></li>
+								<li><a href="#" target="_blank">원주지청</a></li>
+								<li><a href="#" target="_blank">태백지청</a></li>
+								<li><a href="#" target="_blank">영월출장소</a></li>
+								<li><a href="#" target="_blank">부산지방고용노동청 </a></li>
+								<li><a href="#" target="_blank">부산동부지청</a></li>
+								<li><a href="#" target="_blank">부산북부지청</a></li>
+								<li><a href="#" target="_blank">창원지청</a></li>
+								<li><a href="#" target="_blank">울산지청</a></li>
+								<li><a href="#" target="_blank">양산지청</a></li>
+								<li><a href="#" target="_blank">진주지청</a></li>
+								<li><a href="#" target="_blank">통영지청</a></li>
+								<li><a href="#" target="_blank">대구지방고용노동청</a></li>
+								<li><a href="#" target="_blank">대구서부지청</a></li>
+								<li><a href="#" target="_blank">포항지청</a></li>
+								<li><a href="#" target="_blank">구미지청</a></li>
+								<li><a href="#" target="_blank">영주지청</a></li>
+								<li><a href="#" target="_blank">안동지청</a></li>
+								<li><a href="#" target="_blank">광주지방고용노동청</a></li>
+								<li><a href="#" target="_blank">전주지청</a></li>
+								<li><a href="#" target="_blank">전주지청익산지청</a></li>
+								<li><a href="#" target="_blank">군산지청</a></li>
+								<li><a href="#" target="_blank">목포지청</a></li>
+								<li><a href="#" target="_blank">여수지청</a></li>
+								<li><a href="#" target="_blank">대전지방고용노동청</a></li>
+								<li><a href="#" target="_blank">청주지청</a></li>
+								<li><a href="#" target="_blank">천안지청</a></li>
+								<li><a href="#" target="_blank">충주지청</a></li>
+								<li><a href="#" target="_blank">보령지청</a></li>
+								<li><a href="#" target="_blank">서산출장소</a></li>
+								<li><a href="#" target="_blank">중앙노동위원회</a></li>
+								<li><a href="#" target="_blank">최저임금위원회</a></li>
+								<li><a href="#" target="_blank">산업재해보상보험재심사위원회</a></li>
+								<li><a href="#" target="_blank">고용보험심사위원회</a></li>
+							</ul>
+							</div>
+						<button type="button" class="popup-close"><span class="sr-only">레이어 닫기</span></button>
+					</div>
+				</div>
+			</div>
+			</header>
+		<div id="container">
+			<div class="inner in-between">
+				<nav class="left-menu">
+					<div class="left-in">
+						<h2 class="lnb-tit">1depth title</h2>
+						<ul class="acco-list lnb-list" data-action="accordion">
+							<li class="li">
+								<div class="acco-head">
+									<h3 class="tit">2depth-title</h3>
+									<button type="button" class="btn btn-ico acco-btn" aria-expanded="false">
+										<span class="sr-only">접기</span>
+									</button>
+								</div>
+								<div class="acco-body"> 
+									<div class="acco-in">
+										<ul class="sub-ul">
+											<li>
+												<button type="button" class="subm is-depth4" aria-expanded="false">
+													3depth title<span class="sr-only">열기</span>
+												</button>
+												<div class="depth4-wrap">
+													<button type="button" class="depth4-tit">
+														3depth-title
+														<span class="sr-only">닫기</span>
+													</button>
+													<ul class="depth4-ul">
+														<li><a href="#">depth title</a></li>
+														<li><a href="#">depth title</a></li>
+														<li><a href="#">depth title</a></li>
+														<li><a href="#">depth title</a></li>
+													</ul>
+												</div>
+											</li>
+											<li><a href="#" class="subm" aria-current="page">3depth title</a></li>
+											<li><a href="#" class="subm">3depth title</a></li>
+											<li><a href="#" class="subm">3depth title</a></li>
+										</ul>
+									</div>
+								</div>
+							</li>
+							<li class="li">
+								<div class="acco-head">
+									<h3 class="tit">2depth-title</h3>
+									<button type="button" class="btn btn-ico acco-btn" aria-expanded="false">
+										<span class="sr-only">접기</span>
+									</button>
+								</div>
+								<div class="acco-body">
+									<div class="acco-in">
+										<ul class="sub-ul">
+											<li><a href="#" class="subm">3depth title</a></li>
+											<li><a href="#" class="subm">3depth title</a></li>
+											<li><a href="#" class="subm">3depth title</a></li>
+											<li>
+												<button type="button" class="subm is-depth4" aria-expanded="false">
+													3depth title<span class="sr-only">열기</span>
+												</button>
+												<div class="depth4-wrap">
+													<button type="button" class="depth4-tit">
+														3depth title<span class="sr-only">닫기</span>
+													</button>
+													<ul class="depth4-ul">
+														<li><a href="#">depth title</a></li>
+														<li><a href="#">depth title</a></li>
+														<li><a href="#">depth title</a></li>
+														<li><a href="#">depth title</a></li>
+													</ul>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</li>
+							<li class="li">
+								<div class="acco-head">
+									<h3 class="tit">2depth-title</h3>
+									<button type="button" class="btn btn-ico acco-btn" aria-expanded="false">
+										<span class="sr-only">접기</span>
+									</button>
+								</div>
+								<div class="acco-body">
+									<div class="acco-in">
+										<ul class="sub-ul">
+											<li><a href="#" class="subm">3depth title</a></li>
+											<li><a href="#" class="subm">3depth title</a></li>
+											<li><a href="#" class="subm">3depth title</a></li>
+											<li><a href="#" class="subm">3depth title</a></li>
+										</ul>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</nav>
+				<div class="contents">
+					<nav class="breadcrumb-wrap" aria-label="브레드크럼">
+						<ol class="breadcrumb">
+							<li class="home"><a href="#" class="txt">홈</a></li>
+							<li><span class="txt">민원</span></li>
+							<li><span class="txt">통합 신청</span></li>
+							<li><span class="txt">통합 민원/예약 신청</span></li>
+						</ol>
+					</nav>
+					<div class="page-title-wrap" data-type="responsive">
+						<h2 class="h-tit">통합 민원/예약 신청</h2>
+						<div class="krds-drop-wrap h-tit-drop">
+							<button type="button" class="h-tit drop-btn">서비스 소개</button>
+							<div class="drop-menu">
+								<div class="drop-in">
+									<ul class="drop-list">
+										<li><a href="#" class="item-link">서비스 소개</a></li>
+										<li><a href="#" class="item-link">국내에서 외국발간자료 신청</a></li>
+										<li><a href="#" class="item-link">해외에서 국내발간자료 신청</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="krds-form-wrap">
+						<form id="submissionForm">
+                            
+                            <style>
+                                /* 최소한의 스타일 정의 (KRDS CSS를 사용할 수 없으므로) */
+                                .form-group { margin-bottom: 20px; }
+                                .form-group label { display: block; margin-bottom: 8px; font-weight: bold; }
+                                .form-group input[type="text"],
+                                .form-group input[type="tel"],
+                                .form-group textarea,
+                                .form-group select {
+                                    width: 100%;
+                                    padding: 10px;
+                                    border: 1px solid #ccc;
+                                    border-radius: 4px;
+                                    box-sizing: border-box;
+                                }
+                                .dynamic-fields { padding: 15px; margin-top: 20px; border: 1px dashed #b2dfdb; border-radius: 4px; background-color: #f5fffd; }
+                                .field-section { display: none; }
+                            </style>
+
+							<div class="form-group">
+								<label for="category">신청 카테고리</label>
+								<select id="category" name="category" class="form-control" onchange="showFields()">
+									<option value="">-- 원하는 신청 종류를 선택하세요 --</option>
+									<option value="민원신청">민원신청</option>
+									<option value="시민제안">시민제안</option>
+									<option value="교육">교육, 강좌, 체험</option>
+									<option value="시설">공공시설/체육시설 예약</option>
+									<option value="장비대여">장비대여</option>
+									<option value="사전상담">사전상담예약</option>
+								</select>
+							</div>
+
+							<div class="form-group">
+								<label for="name">이름</label>
+								<input type="text" id="name" name="name" class="form-control" required placeholder="신청자 본인의 이름을 입력하세요.">
+							</div>
+
+							<div class="form-group">
+								<label for="phone">전화번호</label>
+								<input type="tel" id="phone" name="phone" class="form-control" required placeholder="연락 가능한 휴대폰 번호를 입력하세요. (예: 010-1234-5678)">
+							</div>
+
+							<div id="dynamic-fields" class="dynamic-fields">
+								<p style="text-align: center; color: #666;">**카테고리를 선택하시면 세부 항목이 표시됩니다.**</p>
+
+								<div id="fields-민원신청" class="field-section">
+									<h3>[민원신청] 상세 내용</h3>
+									<div class="form-group">
+										<label for="complaintType">민원 종류</label>
+										<input type="text" id="complaintType" name="complaintType" class="form-control" placeholder="구체적인 민원 내용을 분류하세요. (예: 도로 파손, 환경 관련, 교통 관련)">
+									</div>
+									<div class="form-group">
+										<label for="complaintContent">민원 내용</label>
+										<textarea id="complaintContent" name="complaintContent" class="form-control" rows="5" placeholder="발생 장소, 시간 등 구체적인 내용을 상세히 기입하세요."></textarea>
+									</div>
+								</div>
+
+								<div id="fields-시민제안" class="field-section">
+									<h3>[시민제안] 상세 내용</h3>
+									<div class="form-group">
+										<label for="proposalTitle">제안 제목</label>
+										<input type="text" id="proposalTitle" name="proposalTitle" class="form-control" placeholder="제안의 핵심 내용을 요약하여 기입하세요.">
+									</div>
+									<div class="form-group">
+										<label for="proposalContent">제안 내용</label>
+										<textarea id="proposalContent" name="proposalContent" class="form-control" rows="5" placeholder="개선 방향, 기대 효과 등 상세 내용을 기입하세요."></textarea>
+									</div>
+								</div>
+
+								<div id="fields-교육" class="field-section">
+									<h3>[교육, 강좌, 체험] 상세 내용</h3>
+									<div class="form-group">
+										<label for="programName">프로그램명</label>
+										<input type="text" id="programName" name="programName" class="form-control" placeholder="신청하고자 하는 강좌/체험의 정확한 이름을 기입하세요.">
+									</div>
+									<div class="form-group">
+										<label for="programDate">희망 일자/시간</label>
+										<input type="text" id="programDate" name="programDate" class="form-control" placeholder="프로그램에 따라 희망하는 날짜나 시간을 기입하세요.">
+									</div>
+								</div>
+
+								<div id="fields-시설" class="field-section">
+									<h3>[공공시설/체육시설] 예약 상세</h3>
+									<div class="form-group">
+										<label for="facilityName">시설명</label>
+										<input type="text" id="facilityName" name="facilityName" class="form-control" placeholder="예약하고자 하는 시설의 명칭을 기입하세요. (예: 시민회관 대회의실, 풋살장)">
+									</div>
+									<div class="form-group">
+										<label for="facilityDateTime">예약 일시/시간</label>
+										<input type="text" id="facilityDateTime" name="facilityDateTime" class="form-control" placeholder="시설 사용을 희망하는 날짜와 시간을 기입하세요.">
+									</div>
+									<div class="form-group">
+										<label for="facilityPurpose">사용 목적</label>
+										<textarea id="facilityPurpose" name="facilityPurpose" class="form-control" rows="3" placeholder="시설 이용의 구체적인 목적을 기입하세요."></textarea>
+									</div>
+								</div>
+
+								<div id="fields-장비대여" class="field-section">
+									<h3>[장비대여] 상세 내용</h3>
+									<div class="form-group">
+										<label for="equipmentName">장비 명칭</label>
+										<input type="text" id="equipmentName" name="equipmentName" class="form-control" placeholder="대여할 장비의 정확한 이름을 기입하세요.">
+									</div>
+									<div class="form-group">
+										<label for="rentalPeriod">대여 기간</label>
+										<input type="text" id="rentalPeriod" name="rentalPeriod" class="form-control" placeholder="장비 대여 시작일과 반납일을 기입하세요.">
+									</div>
+								</div>
+
+								<div id="fields-사전상담" class="field-section">
+									<h3>[사전상담예약] 상세 내용</h3>
+									<div class="form-group">
+										<label for="consultationArea">상담 분야</label>
+										<input type="text" id="consultationArea" name="consultationArea" class="form-control" placeholder="원하는 상담 분야를 기입하세요. (예: 법률, 취업, 세무)">
+									</div>
+									<div class="form-group">
+										<label for="consultationContent">상담 희망 일시 및 내용</label>
+										<textarea id="consultationContent" name="consultationContent" class="form-control" rows="3" placeholder="상담 희망 날짜, 시간 및 상담할 내용을 간략히 기입하세요."></textarea>
+									</div>
+								</div>
+
+							</div>
+							
+							<div class="button-group" style="text-align: center; margin-top: 30px;">
+								<button type="submit" class="krds-btn primary large">신청하기</button>
+								<button type="reset" class="krds-btn outline large">취소</button>
+							</div>
+						</form>
+					</div>
+					<script>
+						function showFields() {
+							// 모든 동적 필드 섹션을 숨깁니다.
+							const sections = document.querySelectorAll('.field-section');
+							sections.forEach(section => {
+								section.style.display = 'none';
+							});
+
+							// 선택된 카테고리에 해당하는 필드를 보여줍니다.
+							const selectedCategory = document.getElementById('category').value;
+							const targetSection = document.getElementById('fields-' + selectedCategory);
+
+							if (targetSection) {
+								targetSection.style.display = 'block';
+							}
+						}
+
+						// 페이지 로드 시 초기 상태 설정
+						document.addEventListener('DOMContentLoaded', showFields);
+					</script>
+				</div>
+			</div>
+			</div>
+		<footer id="footer">
+			<div class="inner">
+				<div class="f-top">
+					<div class="f-menu">
+						<a href="#">정부24 소개</a>
+						<a href="#">이용안내</a>
+						<a href="#">개선 의견</a>
+						<a href="#" class="btn btn-txt sm ico-arr">직원검색</a>
+					</div>
+					<div class="link-sns">
+						<a href="#" class="instagram" target="_blank"><span class="sr-only">인스타그램</span></a>
+						<a href="#" class="youtube" target="_blank"><span class="sr-only">유튜브</span></a>
+						<a href="#" class="twitter" target="_blank"><span class="sr-only">트위터</span></a>
+						<a href="#" class="facebook" target="_blank"><span class="sr-only">페이스북</span></a>
+						<a href="#" class="blog" target="_blank"><span class="sr-only">블로그</span></a>
+					</div>
+				</div>
+				
+				<div class="f-btm">
+					<div class="f-btm-text">
+						<div class="f-menu">
+							<a href="#" class="point">개인정보처리방침</a>
+							<a href="#">저작권 정책</a>
+							<a href="#">웹 접근성 품질인증 마크 획득</a>
+						</div>
+						<p class="f-copy">© 2023 National Health Insurance Service. All rights reserved.</p>
+					</div>
+					<div class="f-btm-ban">
+						<span class="sr-only">보건복지부</span>
+						<span class="ban-txt">이 누리집은 보건복지부 산하기관 누리집입니다.</span>
+					</div>
+				</div>
+			</div>
+		</footer>
+		</div>
+
+	<script src="https://v04.krds.go.kr/resources/
+js/lib/jquery-3.7.1.min.js"></script>
+	<script src="https://v04.krds.go.kr/resources/
+js/lib/swiper-bundle.min.js"></script>
+	<script src="https://v04.krds.go.kr/resources/
+js/lib/sortable.min.js"></script>
+	<script src="https://v04.krds.go.kr/resources/
+js/krds-common.js"></script>
+</body>
+
+</html>
