@@ -20,6 +20,64 @@ img/guide/favicon_32.png">
 	<title>통합 민원/예약 신청</title>
 	<link href="https://v04.krds.go.kr/resources/
 css/pattern_css.css" type="text/css" rel="stylesheet" />
+    
+    <style>
+        /* 기본 폼 요소 스타일 */
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: bold; }
+        .form-group input[type="text"],
+        .form-group input[type="tel"],
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .dynamic-fields { padding: 15px; margin-top: 20px; border: 1px dashed #b2dfdb; border-radius: 4px; background-color: #f5fffd; }
+        .field-section { display: none; }
+
+        /* 인라인 폼 필드 스타일 (레이블과 입력/선택 상자를 한 줄에 배치) */
+        .inline-form-field {
+            display: flex; /* Flexbox를 사용하여 내부 요소를 가로 배열 */
+            align-items: center; /* 수직 중앙 정렬 */
+            gap: 15px; /* 레이블과 입력란 사이의 간격 */
+        }
+        .inline-form-field label {
+            /* 레이블 스타일 */
+            display: block !important;
+            margin-bottom: 0 !important; 
+            flex-shrink: 0; /* 레이블이 줄어들지 않도록 고정 */
+            width: 120px; /* 레이블의 너비를 고정하여 정렬 */
+        }
+        /* select와 input 요소에 flex-grow 적용하여 남은 공간 채우기 */
+        .inline-form-field select,
+        .inline-form-field input[type="text"],
+        .inline-form-field input[type="tel"] {
+            flex-grow: 1; /* 남은 공간을 최대한 채우도록 설정 */
+            width: auto !important; /* 기존 width: 100% 오버라이드 */
+        }
+        
+        /* [수정] 버튼 세로 정렬 및 가운데 정렬 스타일 */
+        .vertical-button-group {
+            border-radius: 4px; /* 버튼 모서리 둥글게 */
+            cursor: pointer;
+            font-weight: bold;
+            text-align: center;
+            border: 1px solid transparent; /* 기본 테두리 설정 */
+            display: flex;
+            flex-direction: column; /* 세로 정렬 */
+            align-items: center; /* 가운데 정렬 */
+            margin-top: 30px;
+            padding: 10px 20px;
+        }
+        .vertical-button-group button {
+            width: 150px; /* 버튼 너비 통일 (원하는 크기로 조정 가능) */
+            margin-bottom: 10px; /* 버튼 사이 간격 */
+            margin-left: 0 !important; /* 기존의 margin-left 제거 */
+        }
+    </style>
 </head>
 
 <body>
@@ -546,12 +604,7 @@ img/pattern/layout/head_logo_slogan.svg" class="logo-slogan"
 										</li>
 										<li class="li">
 											<div class="text">
-												<p class="txt"><span class="text-bold">퇴직</span>금 중간정산</p>
-											</div>
-										</li>
-										<li class="li">
-											<div class="text">
-												<p class="txt"><span class="text-bold">퇴직</span>금 미지급</p>
+												<p class="txt">퇴직금 중간정산</p>
 											</div>
 										</li>
 										<li class="li">
@@ -762,53 +815,41 @@ img/pattern/layout/head_logo_slogan.svg" class="logo-slogan"
 						</div>
 					</div>
 					<div class="krds-form-wrap">
-						<form id="submissionForm">
+                        <form id="submissionForm" onsubmit="handleSubmit(event)">
                             
-                            <style>
-                                /* 최소한의 스타일 정의 (KRDS CSS를 사용할 수 없으므로) */
-                                .form-group { margin-bottom: 20px; }
-                                .form-group label { display: block; margin-bottom: 8px; font-weight: bold; }
-                                .form-group input[type="text"],
-                                .form-group input[type="tel"],
-                                .form-group textarea,
-                                .form-group select {
-                                    width: 100%;
-                                    padding: 10px;
-                                    border: 1px solid #ccc;
-                                    border-radius: 4px;
-                                    box-sizing: border-box;
-                                }
-                                .dynamic-fields { padding: 15px; margin-top: 20px; border: 1px dashed #b2dfdb; border-radius: 4px; background-color: #f5fffd; }
-                                .field-section { display: none; }
-                            </style>
-
-							<div class="form-group">
-								<label for="category">신청 카테고리</label>
-								<select id="category" name="category" class="form-control" onchange="showFields()">
-									<option value="">-- 원하는 신청 종류를 선택하세요 --</option>
-									<option value="민원신청">민원신청</option>
-									<option value="시민제안">시민제안</option>
-									<option value="교육">교육, 강좌, 체험</option>
-									<option value="시설">공공시설/체육시설 예약</option>
-									<option value="장비대여">장비대여</option>
-									<option value="사전상담">사전상담예약</option>
-								</select>
+                            <div class="form-group">
+                                <div class="inline-form-field">
+                                    <label for="category">신청 카테고리</label>
+                                    <select id="category" name="category" class="form-control" onchange="showFields()">
+                                        <option value="">-- 원하는 신청 종류를 선택하세요 --</option>
+                                        <option value="민원신청">민원신청</option>
+                                        <option value="시민제안">시민제안</option>
+                                        <option value="교육">교육, 강좌, 체험</option>
+                                        <option value="시설">공공시설/체육시설 예약</option>
+                                        <option value="장비대여">장비대여</option>
+                                        <option value="사전상담">사전상담예약</option>
+                                    </select>
+                                </div>
 							</div>
 
-							<div class="form-group">
-								<label for="name">이름</label>
-								<input type="text" id="name" name="name" class="form-control" required placeholder="신청자 본인의 이름을 입력하세요.">
+                            <div class="form-group">
+                                <div class="inline-form-field">
+                                    <label for="name">이름</label>
+                                    <input type="text" id="name" name="name" class="form-control" required placeholder="신청자 본인의 이름을 입력하세요.">
+                                </div>
 							</div>
 
-							<div class="form-group">
-								<label for="phone">전화번호</label>
-								<input type="tel" id="phone" name="phone" class="form-control" required placeholder="연락 가능한 휴대폰 번호를 입력하세요. (예: 010-1234-5678)">
+                            <div class="form-group">
+                                <div class="inline-form-field">
+                                    <label for="phone">전화번호</label>
+                                    <input type="tel" id="phone" name="phone" class="form-control" required placeholder="연락 가능한 휴대폰 번호를 입력하세요. (예: 010-1234-5678)">
+                                </div>
 							</div>
 
 							<div id="dynamic-fields" class="dynamic-fields">
 								<p style="text-align: center; color: #666;">**카테고리를 선택하시면 세부 항목이 표시됩니다.**</p>
-
-								<div id="fields-민원신청" class="field-section">
+                            
+                                <div id="fields-민원신청" class="field-section">
 									<h3>[민원신청] 상세 내용</h3>
 									<div class="form-group">
 										<label for="complaintType">민원 종류</label>
@@ -819,8 +860,8 @@ img/pattern/layout/head_logo_slogan.svg" class="logo-slogan"
 										<textarea id="complaintContent" name="complaintContent" class="form-control" rows="5" placeholder="발생 장소, 시간 등 구체적인 내용을 상세히 기입하세요."></textarea>
 									</div>
 								</div>
-
-								<div id="fields-시민제안" class="field-section">
+                              
+                                <div id="fields-시민제안" class="field-section">
 									<h3>[시민제안] 상세 내용</h3>
 									<div class="form-group">
 										<label for="proposalTitle">제안 제목</label>
@@ -832,7 +873,7 @@ img/pattern/layout/head_logo_slogan.svg" class="logo-slogan"
 									</div>
 								</div>
 
-								<div id="fields-교육" class="field-section">
+                                <div id="fields-교육" class="field-section">
 									<h3>[교육, 강좌, 체험] 상세 내용</h3>
 									<div class="form-group">
 										<label for="programName">프로그램명</label>
@@ -844,7 +885,7 @@ img/pattern/layout/head_logo_slogan.svg" class="logo-slogan"
 									</div>
 								</div>
 
-								<div id="fields-시설" class="field-section">
+                                <div id="fields-시설" class="field-section">
 									<h3>[공공시설/체육시설] 예약 상세</h3>
 									<div class="form-group">
 										<label for="facilityName">시설명</label>
@@ -860,7 +901,7 @@ img/pattern/layout/head_logo_slogan.svg" class="logo-slogan"
 									</div>
 								</div>
 
-								<div id="fields-장비대여" class="field-section">
+                                <div id="fields-장비대여" class="field-section">
 									<h3>[장비대여] 상세 내용</h3>
 									<div class="form-group">
 										<label for="equipmentName">장비 명칭</label>
@@ -872,7 +913,7 @@ img/pattern/layout/head_logo_slogan.svg" class="logo-slogan"
 									</div>
 								</div>
 
-								<div id="fields-사전상담" class="field-section">
+                                <div id="fields-사전상담" class="field-section">
 									<h3>[사전상담예약] 상세 내용</h3>
 									<div class="form-group">
 										<label for="consultationArea">상담 분야</label>
@@ -886,21 +927,22 @@ img/pattern/layout/head_logo_slogan.svg" class="logo-slogan"
 
 							</div>
 							
-							<div class="button-group" style="text-align: center; margin-top: 30px;">
-								<button type="submit" class="krds-btn primary large">신청하기</button>
-								<button type="reset" class="krds-btn outline large">취소</button>
+							<div class="vertical-button-group">
+								<button type="submit" id="btnSubmit" class="krds-btn primary large">신청하기</button>
+								<button type="button" id="btnCancel" class="krds-btn outline large" onclick="handleCancel()">취소</button>
 							</div>
 						</form>
 					</div>
-					<script>
+					
+                    <script>
 						function showFields() {
-							// 모든 동적 필드 섹션을 숨깁니다.
+							// 1. 모든 동적 필드 섹션을 숨깁니다.
 							const sections = document.querySelectorAll('.field-section');
 							sections.forEach(section => {
 								section.style.display = 'none';
 							});
 
-							// 선택된 카테고리에 해당하는 필드를 보여줍니다.
+							// 2. 선택된 카테고리에 해당하는 필드를 찾아 보여줍니다.
 							const selectedCategory = document.getElementById('category').value;
 							const targetSection = document.getElementById('fields-' + selectedCategory);
 
@@ -908,6 +950,52 @@ img/pattern/layout/head_logo_slogan.svg" class="logo-slogan"
 								targetSection.style.display = 'block';
 							}
 						}
+
+                        function handleSubmit(event) {
+                            event.preventDefault(); // 기본 폼 제출 동작 방지
+
+                            const form = document.getElementById('submissionForm');
+                            const category = document.getElementById('category').value;
+                            
+                            if (!category) {
+                                alert("신청 카테고리를 선택해 주세요.");
+                                return;
+                            }
+                            
+                            // 간단한 필수 필드 검사 (이름, 전화번호)
+                            if (!form.name.value || !form.phone.value) {
+                                alert("이름과 전화번호는 필수 입력 항목입니다.");
+                                return;
+                            }
+
+                            // 폼 데이터 수집 (콘솔에서 확인용)
+                            const data = new FormData(form);
+                            const formData = {};
+                            for (const [key, value] of data.entries()) {
+                                if (value) { 
+                                    formData[key] = value;
+                                }
+                            }
+
+                            console.log('--- 신청 데이터 접수 완료 ---');
+                            console.log('접수된 데이터:', formData);
+                            
+                            alert('신청이 성공적으로 접수되었습니다. 감사합니다.');
+                            
+                            // 성공 후 폼 초기화
+                            form.reset();
+                            showFields(); // 동적 필드도 초기 상태로 되돌립니다.
+                        }
+
+                        function handleCancel() {
+                            // 사용자에게 취소 여부를 확인합니다.
+                            if (confirm("작성 중인 내용을 모두 지우고 신청을 취소하시겠습니까?")) {
+                                const form = document.getElementById('submissionForm');
+                                form.reset(); // 폼 필드 초기화
+                                showFields(); // 동적 필드 숨김 처리
+                                alert("작성이 취소되고 내용이 초기화되었습니다.");
+                            }
+                        }
 
 						// 페이지 로드 시 초기 상태 설정
 						document.addEventListener('DOMContentLoaded', showFields);
